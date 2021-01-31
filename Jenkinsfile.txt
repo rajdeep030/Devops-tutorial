@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         stage('build') {
-  bat "g++ abcd.cpp -o run && run.exe"
+  bat "dir && g++ abcd.cpp -o run && run.exe"
 }
     }
 }
