@@ -1,8 +1,10 @@
 pipeline {
-    agent any
+    agent { docker { image 'node:14-alpine' } }
     stages {
         stage('build') {
-  bat "dir && g++ abcd.cpp -o run && run.exe"
-}
+            steps {
+                bat 'npm --version'
+            }
+        }
     }
 }
