@@ -1,11 +1,16 @@
 pipeline {
-    agent any 
+    agent any
+    environment { 
+        CC = 'clang'
+    }
     stages {
-        stage('build') {
+        stage('Example') {
+            environment { 
+                DEBUG_FLAGS = '-g'
+            }
             steps {
-                bat 'g++ abcd.cpp -o run run.exe'
+                sh 'printenv'
             }
         }
     }
 }
-
